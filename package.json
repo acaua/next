@@ -5,11 +5,48 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "xo --fix"
   },
   "dependencies": {
     "next": "10.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "prettier": "2.2.0",
+    "xo": "^0.35.0"
+  },
+  "xo": {
+    "prettier": true,
+    "extends": "xo-react",
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+      "unicorn/prevent-abbreviations": "off",
+      "import/no-anonymous-default-export": "off",
+      "react/function-component-definition": [
+        "error",
+        {
+          "namedComponents": "function-declaration",
+          "unnamedComponents": "arrow-function"
+        }
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "xo --fix",
+    "*.{css,md}": "prettier --write"
   }
 }
