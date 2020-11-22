@@ -14,12 +14,17 @@
     "react-dom": "17.0.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.0.2",
     "eslint-config-xo-react": "^0.23.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": ">=4",
     "lint-staged": ">=10",
+    "postcss": "^8.1.8",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "2.2.0",
+    "tailwindcss": "^2.0.1",
     "xo": "^0.35.0"
   },
   "xo": {
@@ -31,13 +36,7 @@
       "react/prop-types": "off",
       "unicorn/prevent-abbreviations": "off",
       "import/no-anonymous-default-export": "off",
-      "react/function-component-definition": [
-        "error",
-        {
-          "namedComponents": "function-declaration",
-          "unnamedComponents": "arrow-function"
-        }
-      ]
+      "react/function-component-definition": "off"
     }
   },
   "husky": {
