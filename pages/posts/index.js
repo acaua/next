@@ -9,19 +9,17 @@ export default function Home({slugs}) {
 			<Head>
 				<title>Hello world</title>
 			</Head>
-			<div className="container">
-				<ul className="my-4">
-					{slugs.map((slug) => (
-						<li key={slug}>
-							<Link href={`/posts/${slug}`}>
-								<a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
-									{slug}
-								</a>
-							</Link>
-						</li>
-					))}
-				</ul>
-			</div>
+			<ul className="my-4">
+				{slugs.map((slug) => (
+					<li key={slug}>
+						<Link href={`/posts/${slug}`}>
+							<a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
+								{slug}
+							</a>
+						</Link>
+					</li>
+				))}
+			</ul>
 		</>
 	);
 }

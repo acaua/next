@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 
@@ -9,8 +10,16 @@ export default function Post({post}) {
 	const content = hydrate(post.content, {components});
 	return (
 		<>
-			<h1 className="text-lg font-bold my-4">{post.title}</h1>
-			<article className="prose">{content}</article>
+			<h1 className="text-2xl sm:text-4xl font-bold my-4">{post.title}</h1>
+			{post.coverImage && (
+				<Image
+					src={post.coverImage.src}
+					alt={post.coverImage.alt}
+					width={post.coverImage.width}
+					height={post.coverImage.height}
+				/>
+			)}
+			<article className="prose mx-auto my-4">{content}</article>
 		</>
 	);
 }
@@ -25,7 +34,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-	const post = await getPostBySlug(params.slug, ['content', 'title']);
+	const post = await getPostBySlug(params.slug, [
+		'content',
+		'title',
+		'coverImage'
+	]);
 
 	const mdxSource = await renderToString(post.content, {
 		components,
