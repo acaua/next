@@ -1,15 +1,12 @@
 import Head from 'next/head';
-import Link from 'next/link';
 
-import {getAllSlugs} from '../lib/posts';
-
-export default function Home({slugs}) {
+export default function Home() {
 	return (
 		<>
 			<Head>
 				<title>Hello world</title>
 			</Head>
-			<div className="container m-4">
+			<div className="container">
 				<h1 className="text-red-500 text-xl my-2">Hello world!</h1>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -20,28 +17,7 @@ export default function Home({slugs}) {
 					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 					culpa qui officia deserunt mollit anim id est laborum.
 				</p>
-				<ul className="my-4">
-					{slugs.map((slug) => (
-						<li key={slug}>
-							<Link href={`/posts/${slug}`}>
-								<a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
-									{slug}
-								</a>
-							</Link>
-						</li>
-					))}
-				</ul>
 			</div>
 		</>
 	);
-}
-
-export async function getStaticProps() {
-	const slugs = await getAllSlugs();
-
-	return {
-		props: {
-			slugs
-		}
-	};
 }

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 
@@ -10,11 +9,6 @@ export default function Post({post}) {
 	const content = hydrate(post.content, {components});
 	return (
 		<>
-			<Link href="/">
-				<a className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
-					Home
-				</a>
-			</Link>
 			<h1 className="text-lg font-bold my-4">{post.title}</h1>
 			<article className="prose">{content}</article>
 		</>
