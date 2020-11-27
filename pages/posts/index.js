@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import {getAllSlugs} from '../../lib/posts';
+import { getAllSlugs } from '../../lib/posts';
 
-export default function Home({slugs}) {
+export default function Home({ slugs }) {
 	return (
 		<>
 			<Head>
@@ -29,7 +29,7 @@ export async function getStaticProps() {
 
 	return {
 		props: {
-			slugs
-		}
+			slugs,
+		},
 	};
 }

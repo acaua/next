@@ -2,10 +2,10 @@ module.exports = {
 	purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
 	darkMode: false, // Or 'media' or 'class'
 	theme: {
-		extend: {}
+		extend: {},
 	},
 	variants: {
-		extend: {}
+		extend: {},
 	},
-	plugins: [require('@tailwindcss/typography')]
+	plugins: [require('@tailwindcss/typography')],
 };

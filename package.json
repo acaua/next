@@ -30,6 +30,10 @@
     "tailwindcss": "^2.0.1",
     "xo": "^0.35.0"
   },
+  "prettier": {
+    "trailingComma": "es5",
+    "bracketSpacing": true
+  },
   "xo": {
     "prettier": true,
     "extends": "xo-react",
