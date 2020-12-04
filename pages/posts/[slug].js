@@ -2,7 +2,7 @@ import Image from 'next/image';
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 
-import { getAllSlugs, getPostBySlug } from '../../lib/posts';
+import { getAllSlugs, getPostBySlug } from '@/lib/posts';
 
 const components = {};
 

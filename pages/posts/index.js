@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { getAllSlugs } from '../../lib/posts';
+import { getAllSlugs } from '@/lib/posts';
 
 export default function Home({ slugs }) {
 	return (
