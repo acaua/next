@@ -40,6 +40,8 @@ export async function getStaticProps({ params }) {
 		'coverImage',
 	]);
 
+	if (!post) return { notFound: true };
+
 	const mdxSource = await renderToString(post.content, {
 		components,
 		scope: post,
